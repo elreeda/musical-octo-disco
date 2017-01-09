@@ -14,7 +14,7 @@ import Documents from './components/Documents'
 import Login from './components/Login'
 import Register from './components/Register'
 import Notfound from './components/Notfound'
-import auth from './components/auth'
+import auth from './auth/index'
 
 Vue.use(VueRouter)
 Vue.use(vueResource)
@@ -51,7 +51,14 @@ const router = new VueRouter({
     },
     {
       path: '/editor',
-      component: Editor
+      component: Editor,
+      beforeEnter (to, from, next) {
+        if (!auth.checkAuth()) {
+          next('/')
+        } else {
+          next()
+        }
+      }
     },
     {
       path: '/browse-documents',
