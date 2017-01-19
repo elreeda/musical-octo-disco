@@ -54,9 +54,8 @@ export default {
     login () {
       if (this.isValid) {
         auth.login(this, this.credentials, loggedIn => {
-          console.log(loggedIn)
           if (!loggedIn) {
-            console.log('errrrrrrrrrrrrrrrrrrrrrrrrror')
+            this.responseMsg = 'Something weirdo happend, Try later m8.'
           } else {
             this.$router.push('/')
           }

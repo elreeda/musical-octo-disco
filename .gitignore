@@ -6,4 +6,4 @@ dist/
 npm-debug.log
 yarn-error.log
 # Coverage
-test/unit/coverage
+coverage

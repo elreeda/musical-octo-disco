@@ -4,7 +4,7 @@ const LOGIN = `${SIGNUP_URL}/login`
 export default {
   register (context, newUser, cb) {
     cb = arguments[arguments.length - 1]
-    context.$http.post(SIGNUP_URL, newUser, {
+    return context.$http.post(SIGNUP_URL, newUser, {
       headers: { Authorization: 'Basic a2lkX0IxbDEtNlhIZTphOGMyMDA3N2IwNDA0NGI2OTEwYzA1MWI0MzczODBjNg==' }
     })
     .then(response => {
