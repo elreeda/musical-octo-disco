@@ -20,7 +20,7 @@ export default {
 
   login (context, credentials, cb) {
     cb = arguments[arguments.length - 1]
-    context.$http.post(LOGIN, credentials, {
+    return context.$http.post(LOGIN, credentials, {
       headers: { Authorization: 'Basic a2lkX0IxbDEtNlhIZTphOGMyMDA3N2IwNDA0NGI2OTEwYzA1MWI0MzczODBjNg==' }
     })
     .then(response => {
